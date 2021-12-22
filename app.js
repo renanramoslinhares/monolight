@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Desenvolvimento
 app.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
+app.use('/pages', express.static(__dirname + '/node_modules/admin-lte/pages'));
 app.use('/images', express.static(__dirname + '/public/images'));
 
 app.use('/', router.index);

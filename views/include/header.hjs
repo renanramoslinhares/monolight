@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="/admin-lte/dist/css/adminlte.min.css">
 
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+        <link rel="stylesheet" href="/admin-lte/plugins/summernote/summernote-bs4.min.css">
     </head>
 
     <body class="sidebar-mini" style="height: auto;">
