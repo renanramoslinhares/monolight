@@ -4,13 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
+var app = express();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin');
 // var fs = require('fs');
 
-var app = express();
+var router = {
+  index: require('./routes/index'),
+  admin: require('./routes/admin'),
+  login: require('./routes/login')
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,16 +26,12 @@ app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Desenvolvimento
-app.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
-app.use('/lte-pages', express.static(__dirname + '/node_modules/admin-lte/pages'));
-app.use('/plugins', express.static(__dirname + '/node_modules/admin-lte/plugins'));
-app.use('/root', express.static(__dirname + '/node_modules/admin-lte'));
-// app.use('/img', express.static(__dirname + '/node_modules/bootstrap/dist/'));
-// app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
+app.use('/images', express.static(__dirname + '/public/images'));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
+app.use('/', router.index);
+app.use('/admin', router.admin);
+app.use('/login', router.login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
