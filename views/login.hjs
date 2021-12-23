@@ -9,9 +9,6 @@
               <div class="col-sm-12 text-center">
                 <img src="/images/favicon-192x192.png" width="80" />
                 <footer class="font-weight-light mt-2">{{ slogan }}</footer>
-                {{#tweets}}
-                  {{value}}
-                {{/tweets}}
               </div>
             </div>
           </div>
@@ -27,7 +24,7 @@
                       <form id="quickForm" novalidate="novalidate">
                         <div class="card-body">
                           <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Insert your Email">
+                            <input type="username" name="username" class="form-control" placeholder="Insert your Email or Username">
                           </div>
                           <div class="form-group">
                             <input type="password" name="password" class="form-control" placeholder="Insert your Password">
@@ -51,8 +48,16 @@
                       </form>
                     </div>
                     <div class="row">
+                      <div class="col-md-12 pl-4">
+                        <a href="#"> Lost your password?</a>
+                      </div>
+                    </div>
+                    <div class="row mt-3 pl-4">
                       <div class="col-md-12">
-                        <a href="#"> Lost your password? </a>
+                        <a href="http://localhost:3000/">
+                          <i class="fas fa-long-arrow-alt-left"></i>
+                          Back to Website
+                        </a>
                       </div>
                     </div>
                   </div>

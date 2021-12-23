@@ -62,7 +62,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="far fa-layer-group nav-icon"></i>
+                                <i class="far fa-images nav-icon"></i>
                                 <p>Gallery</p>
                             </a>
                         </li>
@@ -119,7 +119,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-brush"></i>
                         <p>
-                            Aparência
+                            Appearance
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -149,12 +149,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">Configuration</li>
+                <li class="nav-header">Settings</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Usuários
+                            Users
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -171,7 +171,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
-                            Configurações
+                            Settings
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
