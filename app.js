@@ -5,11 +5,6 @@ var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin');
-// var fs = require('fs');
-
 var app = express();
 
 // view engine setup
@@ -24,6 +19,7 @@ app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Desenvolvimento
+app.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
 app.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
 app.use('/images', express.static(__dirname + '/public/images'));
 app.use('/admin', require('./routes/admin'));
@@ -32,10 +28,6 @@ app.use('/api', require('./routes/api'));
 app.use('/fileService', require('./routes/fileService'));
 // app.use('/img', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 // app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/'));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
