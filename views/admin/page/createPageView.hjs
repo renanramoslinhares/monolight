@@ -1,0 +1,98 @@
+{{> header }}
+{{> navbarComponent }}
+{{> sidebarComponent }}
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-12 mb-3">
+          <div class="col">
+            <h1 class="m-0">{{ title }}</h1>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="col-12">
+            <div class="form-group">
+              <input class="form-control form-control-lg" onkeyup="updatePermalink(this)" type="text"
+                placeholder="Title" id="pageTitle" name="pageTitle" value="{{ data.title }}" />
+              <span id="pageTitle-error" class="error invalid-feedback"></span>
+            </div>
+          </div>
+          <div class="text-muted col-12 mt-2">
+            Permalink: <a href="#" id="permalink">{{ data.permalink }}</a>
+            {{!-- <button class="btn btn-outline-secondary btn-xs">Edit</button> --}}
+          </div>
+          <div class="col-12 mt-3">
+            <textarea id="summernote" rows="100">
+                {{ data.content }}
+              </textarea>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card card-outline card-info">
+            <div class="card-header">
+              <h3 class="card-title">
+                Publish
+              </h3>
+            </div>
+            <div class="card-body">
+              <button class="btn btn-outline-secondary btn-sm mb-3" onclick="draftPage({{ data.id }})">Save Draft</button>
+              <button class="btn btn-outline-secondary btn-sm float-right mb-3">Preview</button>
+              <p>
+                <i class="fas fa-thermometer-three-quarters" style="width: 20px; text-align: center;"></i>
+                <span class="mx-3">Status: <b>Draft</b></span><a href="#">Edit</a>
+              </p>
+              <p>
+                <i class="fas fa-eye" style="width: 20px; text-align: center;"></i>
+                <span class="mx-3">Visibility: <b>Public</b></span><a href="#">Edit</a>
+              </p>
+              <p>
+                <i class="fas fa-calendar" style="width: 20px; text-align: center;"></i>
+                <span class="mx-3">Publish: <b>Immediately</b></span><a href="#">Edit</a>
+              </p>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-outline-danger"
+                onclick="deletePage('{{ data.id }}')">Move to trash</button>
+              <button type="button" class="btn btn-primary float-right"
+                onclick="publishPage({{ data.id }})">Publish</button>
+            </div>
+          </div>
+          <div class="card card-outline card-info">
+            <div class="card-header">
+              <h3 class="card-title">
+                Page Attributes
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="order" class="form-label">Order</label>
+                <input id="order" type="number" class="form-control" placeholder="0">
+              </div>
+              <div class="form-group">
+                <label for="template" class="form-label">Template</label>
+                <input class="form-control" list="templateOptions" id="template" placeholder="Template" disabled>
+                <datalist id="templateOptions">
+                  <option value="San Francisco">
+                  <option value="New York">
+                  <option value="Seattle">
+                  <option value="Los Angeles">
+                  <option value="Chicago">
+                </datalist>
+              </div>
+              <div class="form-group">
+                <label for="parent" class="form-label">Parent</label>
+                <select class="custom-select" id="parent" id="parentOptions">
+                  <option value="">(no parent)</option>
+                  {{#data.parentList}}
+                    <option value="{{id}}">{{title}}</option>
+                  {{/data.parentList}}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      {{> footer }}

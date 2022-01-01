@@ -1,0 +1,220 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/admin" class="brand-link">
+        <img src="/images/favicon-32x32.png" alt="MonoLight - AnyWherePress" class="brand-image img-circle elevation-3" style="opacity: .8; background-color:#fff">
+        <span class="brand-text">Mono<span class="font-weight-light">Light</span></span>
+    </a>
+
+    <div class="sidebar">
+        {{> searchComponent }}
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">Analytics</li>
+                <li class="nav-item">
+                    <a href="/admin/dashboard" class="nav-link disabled">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-header">Content</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-thumbtack"></i>
+                        <p>
+                            Posts
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/profile.html" class="nav-link">
+                                <i class="fas fa-stream nav-icon"></i>
+                                <p>Categories</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/profile.html" class="nav-link">
+                                <i class="fas fa-layer-group nav-icon"></i>
+                                <p>All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-photo-video"></i>
+                        <p>
+                            Media
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/profile.html" class="nav-link">
+                                <i class="far fa-images nav-icon"></i>
+                                <p>Gallery</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-clone"></i>
+                        <p>
+                            Pages
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="/admin/page/create" class="nav-link">
+                                <i class="fas fa-plus nav-icon"></i>
+                                <p>New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/page/attributes" class="nav-link disabled">
+                                <i class="fas fa-stream nav-icon"></i>
+                                <p>Attributes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/page/all" class="nav-link">
+                                <i class="fas fa-layer-group nav-icon"></i>
+                                <p>All</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">Custumization</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-bars"></i>
+                        <p>
+                            Menu
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Invoice</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-brush"></i>
+                        <p>
+                            Appearance
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Themes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Customize</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Widgets</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Menus</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Background</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                {{!-- <i class="far fa-circle nav-icon"></i> --}}
+                                <p>Theme editor</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-plug"></i>
+                        <p>
+                            Plugin
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Invoice</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">Settings</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Users
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Invoice</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Settings
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview mb-4">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Invoice</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
