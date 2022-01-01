@@ -9,7 +9,7 @@ async function getToken() {
   })
     .then((response) => {
       if (response.data) {
-        showAlert("Successfully authenticated.", "success");
+        showAlert("Successfully authenticated.");
         localStorage.awp_access = JSON.stringify(response.data);
         setTimeout(() => {
           goTo("/admin");
@@ -44,10 +44,19 @@ function validation(fileName) {
   }
 }
 
-function showAlert(message, type = "info") {
+function showAlert(message = "<b>Saved successfully!</b>", type = "success") {
   // types = ['success', 'info', 'error', 'warning'];
-  if (!message) return;
   toastr[type](message);
+}
+
+function showAlertGoTo(redirectToUrl, message, type, delay = 1500) {
+  if (!redirectToUrl) return;
+  setTimeout(() => {
+    goTo(redirectToUrl);
+  }, delay);
+  message += "<br />Hold. You will be redirected.";
+
+  showAlert(message, type);
 }
 
 function deletePage(pageId) {
@@ -72,6 +81,20 @@ function goTo(url) {
 }
 
 function prepareData() {
+  // obter dados do usuário do próprio token
+  // under development
+  if (!localStorage.awp_access) {
+    const type = "warning";
+    let message = "<b>Authentication error!</b><br />";
+    if (redirectToUrl) {
+      setTimeout(() => {
+        goTo(redirectToUrl);
+      }, 1500);
+      message += "<br />Hold. You will be redirected.";
+    }
+
+    showAlert(message, type);
+  }
   const dataUser = JSON.parse(localStorage.awp_access).dataUser;
   const title = $("#pageTitle").val();
   const fileName = normalizeFileName(title);
@@ -101,7 +124,7 @@ async function publishPage(pageId) {
   const promiseCreateFile = createFileByName(data.permalink, body);
 
   Promise.all([promiseRegister, promiseCreateFile]).then(() => {
-    showAlertDefault("/admin/page/all");
+    showAlertGoTo("/admin/page/all");
   });
 }
 
@@ -115,21 +138,8 @@ function draftPage(pageId) {
     ? updateRegisterById(pageId, body)
     : createRegister(body);
   promiseRegister.then(() => {
-    showAlertDefault("/admin/page/all");
+    showAlertGoTo("/admin/page/all");
   });
-}
-
-function showAlertDefault(redirectToUrl) {
-  const type = "success";
-  let message = "<b>Saved successfully!!</b><br />";
-  if (redirectToUrl) {
-    setTimeout(() => {
-      goTo(redirectToUrl);
-    }, 1500);
-    message += "<br />Hold. You will be redirected.";
-  }
-
-  showAlert(message, type);
 }
 
 function normalizeFileName(title) {
@@ -187,4 +197,9 @@ function request(params) {
     .catch((error) => {
       error;
     });
+}
+
+function logOut() {
+  delete localStorage["awp_access"];
+  showAlertGoTo('/login', '<b>Successfully Logout!</b>', 'warning');
 }
