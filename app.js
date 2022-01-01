@@ -1,17 +1,12 @@
 var createError = require('http-errors');
 var express = require('express');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 // under development
 // use less css
 // var lessMiddleware = require('less-middleware');
 // var logger = require('morgan');
-
-var router = {
-  index: require('./routes/index'),
-  admin: require('./routes/admin'),
-  login: require('./routes/login')
-};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -67,6 +67,9 @@ function getAllPageData(order = 'date') {
 }
 
 function getPageData(id) {
+    // under development
+    const frontEndUrl = 'http://localhost:3000';
+
     return request({ url: `/api/page/${id}` })
         .then(element => ({
             id: element.id,
@@ -77,7 +80,7 @@ function getPageData(id) {
             parent: element.parent,
             order: element.order,
             featuredImageUrl: element.featuredImageUrl,
-            permalink: element.permalink,
+            permalink: `${frontEndUrl}/${element.permalink}.html`,
             createdAt: element.createdAt,
             updatedAt: element.updatedAt,
         }));
