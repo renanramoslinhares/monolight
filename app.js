@@ -2,8 +2,10 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var lessMiddleware = require('less-middleware');
-var logger = require('morgan');
+// under development
+// use less css
+// var lessMiddleware = require('less-middleware');
+// var logger = require('morgan');
 
 var app = express();
 
@@ -11,14 +13,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
-app.use(logger('dev'));
+// under development
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(lessMiddleware(path.join(__dirname, 'public')));
+// under development
+// app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Desenvolvimento
+// under development
 app.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
 app.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
 app.use('/images', express.static(__dirname + '/public/images'));
