@@ -1,6 +1,0 @@
-{{> header }}
-  {{> navbar }}
-  {{> sidebar}}
-  <h1>{{ title }}</h1>
-  <p>Welcome to {{ title }}</p>
-{{> footer }}
