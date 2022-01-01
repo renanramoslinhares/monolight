@@ -62,15 +62,17 @@ function showAlertGoTo(redirectToUrl, message, type, delay = 1500) {
 function deletePage(pageId) {
   if (pageId) {
     Promise.all([removeRegisterById(pageId), removeFileById(pageId)]).then(
-      () => {
-        setTimeout(() => {
-          goTo("/admin/page/all");
-        }, 1500);
-
-        const message =
-          "<b>Successfully deleted page!</b><br /> Hold. You will be redirected.";
-        const type = "error";
-        showAlert(message, type);
+      (arrayResp) => {
+        // under development
+        const isSuccess = (param) => { return param.status == "Success"; };
+        if (isSuccess(arrayResp[0]) && isSuccess(arrayResp[1])) {
+          const message = "<b>Successfully deleted page!</b>";
+          showAlertGoTo("/admin/page/all", message, "warning");
+        } else {
+          const message = `<b>Error! Could not delete this page.</b>
+            <br /><small>try again deleted page!</small>`;
+          showAlert(message, "error");
+        }
       }
     );
   } else goTo("/admin/page/all");
@@ -201,5 +203,5 @@ function request(params) {
 
 function logOut() {
   delete localStorage["awp_access"];
-  showAlertGoTo('/login', '<b>Successfully Logout!</b>', 'warning');
+  showAlertGoTo("/login", "<b>Successfully Logout!</b>", "warning");
 }

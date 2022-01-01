@@ -25,7 +25,10 @@ router.delete('/delete/:pageId', async function(req, res, next) {
     await database.sync();
     const fileName = await pageModel.findByPk(req.params.pageId).then(resp => resp.dataValues.permalink)
     fs.access(`public/${fileName}.html`, fs.constants.F_OK, (error => {
-        if (!error) fs.unlinkSync(`public/${fileName}.html`);
+        if (!error) {
+            fs.unlinkSync(`public/${fileName}.html`);
+            res.end(JSON.stringify({ status: 'Success', data: { message: 'Successfully deleted!' } }));
+        } else { res.end(JSON.stringify({ status: 'Error', data: { message: 'Could not find the file!' } })) };
     }));
 });
 
