@@ -8,12 +8,12 @@
         <link rel="stylesheet" href="/admin-lte/plugins/fontawesome-free/css/all.min.css">
         <link rel="stylesheet" href="/admin-lte/dist/css/adminlte.min.css">
 
-        <!-- Toastr -->
+        <!-- Alert Toastr -->
         <link rel="stylesheet" href="/admin-lte/plugins/toastr/toastr.min.css">
 
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
-        <!-- Summernote -->
+        <!-- Editor Summernote -->
         <link rel="stylesheet" href="/admin-lte/plugins/summernote/summernote-bs4.min.css">
     </head>
 

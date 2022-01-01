@@ -7,7 +7,11 @@ var cookieParser = require('cookie-parser');
 // var lessMiddleware = require('less-middleware');
 // var logger = require('morgan');
 
-var app = express();
+var router = {
+  index: require('./routes/index'),
+  admin: require('./routes/admin'),
+  login: require('./routes/login')
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +27,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // under development
+app.use('/sample', express.static(__dirname + '/node_modules/admin-lte/pages'));
+
 app.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
 app.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
 app.use('/images', express.static(__dirname + '/public/images'));
