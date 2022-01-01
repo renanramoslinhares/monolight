@@ -12,6 +12,8 @@
     "express": "~4.16.1",
     "hjs": "~0.0.6",
     "http-errors": "~1.6.3",
+        "sequelize": "^7.0.0-alpha.2",
+        "sqlite3": "^5.0.2",
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.1"
   }
