@@ -25,9 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Desenvolvimento
 app.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
-app.use('/lte-pages', express.static(__dirname + '/node_modules/admin-lte/pages'));
-app.use('/plugins', express.static(__dirname + '/node_modules/admin-lte/plugins'));
-app.use('/root', express.static(__dirname + '/node_modules/admin-lte'));
+app.use('/images', express.static(__dirname + '/public/images'));
+app.use('/admin', require('./routes/admin'));
+app.use('/login', require('./routes/login'));
+app.use('/api', require('./routes/api'));
+app.use('/fileService', require('./routes/fileService'));
 // app.use('/img', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 // app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 
