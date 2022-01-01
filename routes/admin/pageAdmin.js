@@ -61,6 +61,7 @@ function getAllPageData(order = 'date') {
             },
             date: moment(element.updatedAt).format('L H:mm')
                 // an hour ago ...
+                // under development
         })));
     return req;
 }
@@ -84,7 +85,8 @@ function getPageData(id) {
 
 function request(params) {
     return new Promise((resolve, reject) => {
-        // Backend - Provisório
+        // Backend
+        // under development
         const backend = "http://localhost:3000";
 
         https.get(`${backend}${params.url}`, res => {

@@ -17,7 +17,8 @@ router.get('/login', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
     // res.redirect('/admin/dashboard');
-    res.redirect('/admin/page'); // Provisório
+    res.redirect('/admin/page');
+    // under development
 });
 
 router.get('/dashboard', function(req, res, next) {

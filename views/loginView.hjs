@@ -35,7 +35,7 @@
                             <div class="col-md-6">
                               <div class="custom-control custom-checkbox mt-2">
                                 <input type="checkbox" name="terms" class="custom-control-input" id="remember-me" disabled>
-                                {{!-- Desenvolvimento --}}
+                                {{!-- under development --}}
                                 <label class="custom-control-label" for="remember-me">Remember-me</label>
                               </div>
                             </div>
