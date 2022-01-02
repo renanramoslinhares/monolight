@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
-const database = require('../db');
-const pageModel = require('../models/pageModel.js');
+const database = require('../../db');
+const pageModel = require('../../models/pageModel.js');
 
 router.put('/create/:fileName', async function(req, res, next) {
     const fileName = req.params.fileName;
@@ -12,13 +12,8 @@ router.put('/create/:fileName', async function(req, res, next) {
         if (err) throw err;
         console.log('Saved!');
     });
-    // try {
-    //     await database.sync();
-    //     const data = await pageModel.create(req.body)
+
     print_success(res, { fileName });
-    // } catch (error) {
-    //     print_error(res, error);
-    // }
 });
 
 router.delete('/delete/:pageId', async function(req, res, next) {
@@ -33,11 +28,13 @@ router.delete('/delete/:pageId', async function(req, res, next) {
 });
 
 async function print_success(res, data) {
+    // under development
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ status: 'Success', data: await data }));
 }
 
 function print_error(res, error) {
+    // under development
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ status: 'Error', error }));
 }

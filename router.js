@@ -25,6 +25,5 @@ router.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
 router.use('/admin', require('./router/admin'));
 router.use('/login', require('./router/login'));
 router.use('/api', require('./router/api'));
-router.use('/fileService', require('./router/fileService'));
 
 module.exports = router;

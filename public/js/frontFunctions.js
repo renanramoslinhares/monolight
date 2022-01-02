@@ -165,7 +165,7 @@ function removeRegisterById(pageId) {
 }
 
 function removeFileById(pageId) {
-  return request({ url: `/fileService/delete/${pageId}`, method: "DELETE" });
+  return request({ url: `/api/fileService/delete/${pageId}`, method: "DELETE" });
 }
 
 function createRegister(body) {
@@ -178,7 +178,7 @@ function updateRegisterById(pageId, body) {
 
 function createFileByName(fileName, body) {
   return request({
-    url: `/fileService/create/${fileName}`,
+    url: `/api/fileService/create/${fileName}`,
     method: "PUT",
     body,
   });
