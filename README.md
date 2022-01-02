@@ -7,8 +7,13 @@
 - Go to `http://localhost:3000/`
 
 ### Stacks
-- express JS
+#### Node service
+- Express JS
+#### Template
 - Hogan js - Mustache (https://mustache.github.io/mustache.5.html)
-- Lib: admin-lte
-- Backlog: Sequelize + SQLite
-- Go to `http://localhost:3000/`
+#### Library
+- Admin-lte
+- Bootstrap
+#### Database
+- Sequelize
+- SQLite
