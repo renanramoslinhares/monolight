@@ -15,8 +15,8 @@ router.use('/sample', express.static(__dirname + '/node_modules/admin-lte/pages'
 router.use('/admin-lte', express.static(__dirname + '/node_modules/admin-lte'));
 router.use('/dist', express.static(__dirname + '/node_modules/admin-lte/dist'));
 
-router.use('/admin', require('./router/admin'));
-router.use('/login', require('./router/login'));
-router.use('/api', require('./router/api'));
+router.use('/admin', require('./controller/adminController'));
+router.use('/login', require('./controller/loginController'));
+router.use('/api', require('./controller/apiController'));
 
 module.exports = router;
