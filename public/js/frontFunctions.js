@@ -83,7 +83,7 @@ function goTo(url) {
 }
 
 function prepareData() {
-  // obter dados do usuário do próprio token
+  // get user data from token itself
   // under development
   if (!localStorage.awp_access) {
     const type = "warning";

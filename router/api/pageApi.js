@@ -45,6 +45,9 @@ router.get('/:id', async function(req, res, next) {
 
 // Update
 router.put('/:id', async function(req, res, next) {
+    // under development
+    // consult previous status
+    // if "publish to trash" or "publish to draft", delete the file
     const id = req.params.id;
     const body = req.body;
     try {
