@@ -1,10 +1,10 @@
-var express = require('express');
+const express = require('express');
 const router = express.Router();
-var path = require('path');
+const path = require('path');
+const lessMiddleware = require('less-middleware');
 
 // under development
 // use less css
-// var lessMiddleware = require('less-middleware');
 // var logger = require('morgan');
 
 // under development
@@ -15,7 +15,7 @@ var path = require('path');
 // app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 
 // under development
-// app.use(lessMiddleware(path.join(__dirname, 'public')));
+router.use(lessMiddleware(path.join(__dirname, 'public')));
 router.use(express.static(path.join(__dirname, 'public')));
 
 router.use('/sample', express.static(__dirname + '/node_modules/admin-lte/pages'));
