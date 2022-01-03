@@ -4,15 +4,8 @@ const path = require('path');
 const lessMiddleware = require('less-middleware');
 
 // under development
-// use less css
 // var logger = require('morgan');
-
-// under development
 // app.use(logger('dev'));
-
-
-// app.use('/img', express.static(__dirname + '/node_modules/bootstrap/dist/'));
-// app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 
 // under development
 router.use(lessMiddleware(path.join(__dirname, 'public')));
