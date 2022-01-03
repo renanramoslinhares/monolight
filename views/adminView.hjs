@@ -1,0 +1,11 @@
+{{> header }}
+  {{> navbarComponent }}
+  {{> sidebarComponent }}
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        {{> contentComponent }}
+      </div>
+    </div>
+  <div>
+{{> footer }}

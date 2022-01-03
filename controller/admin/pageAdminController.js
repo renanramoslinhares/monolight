@@ -21,7 +21,10 @@ router.get('/', function(req, res, next) {
 router.get(['/all', '/all/:order'], async function(req, res, next) {
     const order = req.params.order;
     const data = await getAllPageData(order);
-    res.render(`admin/page/allPageView`, { title: 'All Pages', data, partials });
+    partials.contentView = 'admin/page/allPageView';
+    // under development
+    // example: adminView
+    res.render(`adminView`, { title: 'All Pages', data, partials });
 });
 
 router.get('/create', async function(req, res, next) {
