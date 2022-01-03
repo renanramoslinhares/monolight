@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 const router = express.Router();
 
-router.use('/page', require('./admin/pageAdmin'));
+router.use('/page', require('./admin/pageAdminController'));
 
 const partials = {
     header: 'include/header',
