@@ -85,18 +85,6 @@ function goTo(url) {
 function prepareData() {
   // get user data from token itself
   // under development
-  if (!localStorage.awp_access) {
-    const type = "warning";
-    let message = "<b>Authentication error!</b><br />";
-    if (redirectToUrl) {
-      setTimeout(() => {
-        goTo(redirectToUrl);
-      }, 1500);
-      message += "<br />Hold. You will be redirected.";
-    }
-
-    showAlert(message, type);
-  }
   const dataUser = JSON.parse(localStorage.awp_access).dataUser;
   const title = $("#pageTitle").val();
   const fileName = normalizeFileName(title);
@@ -113,6 +101,8 @@ function prepareData() {
 }
 
 async function publishPage(pageId) {
+  // check if authenticated
+  // under development
   const data = prepareData();
   data["status"] = "Publish";
   const body = JSON.stringify(data);
@@ -131,6 +121,8 @@ async function publishPage(pageId) {
 }
 
 function draftPage(pageId) {
+  // check if authenticated
+  // under development
   const data = prepareData();
   data["status"] = "Draft";
   const body = JSON.stringify(data);
