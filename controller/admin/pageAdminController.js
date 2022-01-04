@@ -6,12 +6,19 @@ const router = express.Router();
 const moment = require('moment');
 moment.locale('in');
 
+// under development
+// repeated in adminController and pageAdminController
 const partials = {
     header: 'include/header',
     footer: 'include/footer',
     navbarComponent: 'components/navbarComponent',
     sidebarComponent: 'components/sidebarComponent',
     searchComponent: 'components/searchComponent',
+    navigatorComponent: 'components/navigatorComponent',
+    actionSelectComponent: 'components/actionSelectComponent',
+    allPageTableComponent: 'components/allPageTableComponent',
+    breadcrumbComponent: 'components/breadcrumbComponent',
+    allPageView: 'pages/allPageView'
 };
 
 router.get('/', function(req, res, next) {
@@ -21,15 +28,16 @@ router.get('/', function(req, res, next) {
 router.get(['/all', '/all/:order'], async function(req, res, next) {
     const order = req.params.order;
     const data = await getAllPageData(order);
-    partials.contentView = 'admin/page/allPageView';
+    
+    partials.contentComponent = partials['allPageView'];
     // under development
-    // example: adminView
+    // sampler
     res.render(`adminView`, { title: 'All Pages', data, partials });
 });
 
 router.get('/create', async function(req, res, next) {
     const data = { parentList: await getAllPageData() };
-    res.render(`admin/page/createPageView`, { title: 'Add New Page', data, partials });
+    res.render(`pages/createPageView`, { title: 'Add New Page', data, partials });
 });
 
 router.get('/edit/:id', async function(req, res, next) {
@@ -40,7 +48,7 @@ router.get('/edit/:id', async function(req, res, next) {
         resp.filter((element) => element.id != pageId)
     });
 
-    res.render(`admin/page/createPageView`, { title: 'Edit Page', data, partials });
+    res.render(`pages/createPageView`, { title: 'Edit Page', data, partials });
 });
 
 // Functions //

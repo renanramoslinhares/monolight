@@ -4,6 +4,17 @@
   <div class="content-wrapper">
     <div class="content-header">
       <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 mb-3">
+              {{ title }}
+              <a href="/admin/page/create" class="btn btn-sm btn-info ml-2">Add new</a>
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            {{> breadcrumbComponent }}
+          </div>
+        </div>
         {{> contentComponent }}
       </div>
     </div>
