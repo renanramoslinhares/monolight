@@ -28,6 +28,7 @@
 
   <!-- VUE -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://unpkg.com/http-vue-loader"></script>
 </head>
 
 <body class="sidebar-mini" style="height: auto;">
@@ -80,7 +81,6 @@
   <!-- <script src="/admin-lte/plugins/toastr/toastr.min.js"></script> -->
 
 
-  <script src="/js/LoginComponent.js"></script>
   <script>
     // Vue.component("LoginComponent", LoginComponent);
 
@@ -94,7 +94,7 @@
         teste: 'TESTE OK!!!',
       }),
       components: {
-        "login-component": LoginComponent
+        'login-component': httpVueLoader('/js/LoginComponent.vue')
       },
       methods: {},
       created() {
