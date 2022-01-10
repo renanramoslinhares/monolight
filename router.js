@@ -13,8 +13,18 @@ router.use(express.static(path.join(__dirname, 'public')));
 
 // router.use('/admin-lte', express.static(__dirname + '/lib/admin-lte'));
 
-router.use('/admin', require('./controller/adminController'));
-router.use('/login', require('./controller/loginController'));
+// Under development
+// router.use('/admin', require('./controller/adminController'));
+// router.use('/login', require('./controller/loginController'));
+
+router.get('/login', function(req, res, next) {
+    res.redirect('/admin');
+});
+
+router.get('/admin', function(req, res, next) {
+    res.sendFile(__dirname + '/views/appView.html');
+});
+
 router.use('/api', require('./controller/apiController'));
 
 module.exports = router;

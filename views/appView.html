@@ -1,0 +1,107 @@
+<html lang="pt-BR" style="height: auto;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | MonoLight</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+  <!-- <link rel="stylesheet" href="/admin-lte/plugins/fontawesome-free/css/all.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="/admin-lte/dist/css/adminlte.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css"
+    integrity="sha512-mxrUXSjrxl8vm5GwafxcqTrEwO1/oBNU25l20GODsysHReZo4uhVISzAKzaABH6/tTfAxZrY2FprmeAP5UZY8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Alert Toastr -->
+  <!-- <link rel="stylesheet" href="/admin-lte/plugins/toastr/toastr.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <!-- Editor Summernote -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs4-summernote@0.8.10/dist/summernote-bs4.min.css">
+  <!-- <link rel="stylesheet" href="/admin-lte/plugins/summernote/summernote-bs4.min.css"> -->
+
+  <!-- VUE -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body class="sidebar-mini" style="height: auto;">
+  <style>
+    .nav-link.disabled {
+      color: #6c757d !important;
+      pointer-events: none;
+      cursor: default;
+      background: none !important;
+    }
+  </style>
+  <div class="wrapper" id="app">
+    <login-component />
+  </div>
+  <!-- <script src="/admin-lte/plugins/jquery/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"
+    integrity="sha512-mULnawDVcCnsk9a4aG1QLZZ6rcce/jSzEGqUkeOLy0b6q0+T6syHrxlsAGH7ZVoqC93Pd0lBqd6WguPWih7VHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/admin-lte/plugins/jquery-validation/jquery.validate.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/jquery.validate.min.js"
+    integrity="sha512-FyKT5fVLnePWZFq8zELdcGwSjpMrRZuYmF+7YdKxVREKomnwN0KTUG8/udaVDdYFv7fTMEc+opLqHQRqBGs8+w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/admin-lte/plugins/jquery-validation/additional-methods.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.9.0/additional-methods.min.js"
+    integrity="sha512-F+TbfaUvnplNldZVXk99fraUQoQRdWS50TuSLPTaYnXzidgZi5m2MbihRU62k1BvGLS7FWi2V5DPvgObyawDmw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/admin-lte/dist/js/adminlte.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"
+    integrity="sha512-AJUWwfMxFuQLv1iPZOTZX0N/jTCIrLxyZjTRKQostNU71MzZTEPHjajSK20Kj1TwJELpP7gl+ShXw5brpnKwEg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="/admin-lte/dist/js/demo.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/demo.min.js"
+    integrity="sha512-iE1uPZFfI7lCfuI9YLL+B5ERXMTiZQISWu2WcfuIJe5AYnrVkbbIoN2ojQfVjfFckcSsgcJOXoMvQCjskFZR5Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <!-- <script src="/admin-lte/plugins/summernote/summernote-bs4.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bs4-summernote@0.8.10/dist/summernote-bs4.min.js"
+    integrity="sha256-cCDFcuitqwS32fFFAM+KiWbH7aUR9u4MrIh6Vdb3nYc=" crossorigin="anonymous"></script>
+
+
+  <script src="/js/validation.js"></script>
+  <script src="/js/buildEditor.js"></script>
+  <script src="/js/frontFunctions.js"></script>
+
+  <!-- Alert Toastr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <!-- <script src="/admin-lte/plugins/toastr/toastr.min.js"></script> -->
+
+
+  <script src="/js/LoginComponent.js"></script>
+  <script>
+    // Vue.component("LoginComponent", LoginComponent);
+
+    // import LoginComponent from '/js/LoginComponent';
+
+    // Vue.component('login-component', LoginComponent);
+
+    new Vue({
+      el: "#app",
+      data: () => ({
+        teste: 'TESTE OK!!!',
+      }),
+      components: {
+        "login-component": LoginComponent
+      },
+      methods: {},
+      created() {
+        console.log('created')
+      }
+    });
+  </script>
+</body>
+
+</html>
