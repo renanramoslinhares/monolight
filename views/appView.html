@@ -41,7 +41,10 @@
     }
   </style>
   <div class="wrapper" id="app">
-    <login-component />
+    <component
+      :is ="activeComponent"
+      @changecomponent ="(event) => { activeComponent = event }"
+    />
   </div>
   <!-- <script src="/admin-lte/plugins/jquery/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -71,8 +74,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bs4-summernote@0.8.10/dist/summernote-bs4.min.js"
     integrity="sha256-cCDFcuitqwS32fFFAM+KiWbH7aUR9u4MrIh6Vdb3nYc=" crossorigin="anonymous"></script>
 
-
-  <script src="/js/validation.js"></script>
   <script src="/js/buildEditor.js"></script>
   <script src="/js/frontFunctions.js"></script>
 
@@ -91,10 +92,11 @@
     new Vue({
       el: "#app",
       data: () => ({
-        teste: 'TESTE OK!!!',
+        activeComponent: 'login-component'
       }),
       components: {
-        'login-component': httpVueLoader('/js/LoginComponent.vue')
+        'login-component': httpVueLoader('/vue/components/LoginComponent.vue'),
+        'admin-component': httpVueLoader('/vue/components/AdminComponent.vue'),
       },
       methods: {},
       created() {

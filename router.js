@@ -22,7 +22,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/admin', function(req, res, next) {
-    res.sendFile(__dirname + '/views/appView.html');
+    res.sendFile('appView.html', { root: __dirname + '/views' });
 });
 
 router.use('/api', require('./controller/apiController'));

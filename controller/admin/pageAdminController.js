@@ -9,16 +9,16 @@ moment.locale('in');
 // under development
 // repeated in adminController and pageAdminController
 const partials = {
-    header: 'include/header',
-    footer: 'include/footer',
-    navbarComponent: 'components/navbarComponent',
-    sidebarComponent: 'components/sidebarComponent',
-    searchComponent: 'components/searchComponent',
+    // header: 'include/header',
+    // footer: 'include/footer',
+    // navbarComponent: 'components/navbarComponent',
+    // sidebarComponent: 'components/sidebarComponent',
+    // searchComponent: 'components/searchComponent',
     navigatorComponent: 'components/navigatorComponent',
     actionSelectComponent: 'components/actionSelectComponent',
-    allPageTableComponent: 'components/allPageTableComponent',
-    breadcrumbComponent: 'components/breadcrumbComponent',
-    allPageView: 'pages/allPageView'
+    // allPageTableComponent: 'components/allPageTableComponent',
+    // breadcrumbComponent: 'components/breadcrumbComponent',
+    // allPageView: 'pages/allPageView'
 };
 
 router.get('/', function(req, res, next) {

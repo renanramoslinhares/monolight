@@ -1,0 +1,82 @@
+<template>
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          data-widget="pushmenu"
+          href="#"
+          role="button"
+          style="padding-top: 13px"
+          ><i class="fas fa-bars"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="fas fa-home mr-2"></i>
+          Home
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fas fa-plus mr-2"></i>
+          New
+        </a>
+        <div class="dropdown-menu dropdown-menu-left">
+          <a href="#" class="dropdown-item disabled">
+            <i class="fas fa-thumbtack mr-2"></i>
+            Post
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item disabled">
+            <i class="fas fa-photo-video mr-2"></i>
+            Media
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-clone mr-2"></i>
+            Page
+          </a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          Renan
+          <i class="ml-2 far fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item disabled">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item disabled">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item disabled">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a onclick="logOut()" href="#" class="dropdown-item dropdown-footer"
+            >Exit</a
+          >
+        </div>
+      </li>
+    </ul>
+  </nav>
+</template>
+<script>
+module.exports = {
+  data: () => ({}),
+  methods: {},
+  created() {},
+  props: {},
+};
+</script>

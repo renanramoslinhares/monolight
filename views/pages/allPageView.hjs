@@ -6,7 +6,7 @@
         {{> navigatorComponent }}
       </div> -->
       <div class="card-body p-0">
-        {{> allPageTableComponent }}
+        <all-page-table-component></all-page-table-component>
       </div>
     </div>
   </div>

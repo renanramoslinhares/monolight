@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar-mini" style="height: auto;">
+    <div style="height: auto;">
         <div class="wrapper">
             <div class="content-wrapper ml-0">
                 <div>
@@ -20,14 +20,25 @@
                                     <div class ="col-md-12">
                                         <div class ="col-md-3 mx-auto">
                                             <div class ="card card-primary pt-2">
-                                                <form id="loginForm" novalidate="novalidate">
+                                                <form id="loginForm" >
                                                     <div class ="card-body">
-                                                        <div class ="form-group">
-                                                            <input id="username" type ="username" name="username" class ="form-control" placeholder="Insert your Email or Username">
-                                                        </div>
-                                                        <div class ="form-group">
-                                                            <input id="password" type ="password" name="password" class ="form-control" placeholder="Insert your Password">
-                                                        </div>
+                                                        <input-component
+                                                          v-model="form.email.value"
+                                                          placeholder="Insert your Email"
+                                                          id="email"
+                                                          type="email"
+                                                          :rules="form.email.rules"
+                                                          @isvalid="(event) => { form.email.isValid = event; }"
+                                                        ></input-component>
+                                                          <!-- @pressenter ="() => { submit() }" -->
+                                                        <input-component
+                                                          v-model="form.password.value"
+                                                          placeholder="Insert your Password"
+                                                          id="password"
+                                                          type="password"
+                                                          :rules="form.password.rules"
+                                                          @isvalid="(event) => { form.password.isValid = event; }"
+                                                        ></input-component>
                                                     </div>
                                                     <div class ="card-footer">
                                                         <div class ="row">
@@ -38,7 +49,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class ="col-md-6">
-                                                                <button type ="submit" class ="btn btn-primary float-right">Submit</button>
+                                                                <button @click.stop ="submit" type ="button" class ="btn btn-primary float-right">Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -59,9 +70,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class ="col-md-6">
-
-                                </div>
                             </div>
                         </div>
                     </section>
@@ -72,6 +80,45 @@
 </template>
 <script>
 module.exports = {
-  data: () => ({}),
+  data: () => ({
+    form: {
+      email: {
+        rules: ["required", "email"],
+        value: "",
+        isValid: true,
+      },
+      password: {
+        rules: ["required"],
+        value: "",
+        isValid: true,
+      },
+      rememberMe: false,
+    },
+  }),
+  methods: {
+    submit() {
+      console.log('submit');
+      requestService
+        .getToken(this.form.email.value, this.form.password.value)
+        .then((response) => {
+          if (response.data) {
+            requestService.showAlert("Successfully authenticated.");
+            localStorage.awp_access = JSON.stringify(response.data);
+            this.$emit("changecomponent", "admin-component");
+          } else {
+            requestService.showAlert(response.error.message, "error");
+          }
+        })
+        .catch((error) => {
+          requestService.showAlert(error.message, "error");
+        });
+    },
+  },
+  components: {
+    "input-component": httpVueLoader("/vue/components/InputComponent.vue"),
+  },
+  created() {
+    // check if authenticate
+  }
 };
 </script>
